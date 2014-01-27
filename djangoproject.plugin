@@ -1,5 +1,5 @@
 [Plugin]
-Loader=python
+Loader=python3
 Module=djangoproject
 IAge=3
 Name=Django Project

@@ -58,7 +58,7 @@ class OutputBox(Gtk.HBox):
                                    stdout=subprocess.PIPE, 
                                    stderr=subprocess.PIPE, 
                                    cwd=cwd)
-        output = process.communicate()
+        output = process.communicate().decode('utf8')
         if output[0]:
             self.insert(output[0])
             self._last_output = output[0]
@@ -68,7 +68,7 @@ class OutputBox(Gtk.HBox):
         self.insert("\nExit: ", 'info')
         self.insert("%s\n\n" % process.returncode, 'bold')
         
-        if output[1] and process.returncode <> 0:
+        if output[1] and process.returncode != 0:
             raise Exception(output[1])
     
     def insert(self, text, tag_name=None):

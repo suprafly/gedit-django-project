@@ -1,11 +1,12 @@
 import os
 import logging
 from gi.repository import GObject, Gtk, Gedit, Gio, GdkPixbuf
-from project import DjangoProject
-from server import DjangoServer
-from output import OutputBox
-from shell import Shell
-from appselector import AppSelector
+from . import project, server, output, shell, appselector
+from .project import DjangoProject
+from .server import DjangoServer
+from .output import OutputBox
+from .shell import Shell
+from .appselector import AppSelector
 
 logging.basicConfig()
 LOG_LEVEL = logging.DEBUG

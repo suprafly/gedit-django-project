@@ -1,2 +1,3 @@
-from plugin import Plugin
+from . import plugin
+from .plugin import Plugin
 
